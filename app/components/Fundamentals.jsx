@@ -1,10 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 
 export default function Fundamentals({ data }) {
   return (
     <>
-      {Object.keys(data).length <= 0 ? (
+      {Object.keys(data).length <= 1 ? (
         ""
       ) : (
         <div className="w-11/12 mx-auto my-3 bg-white rounded-lg p-6 ">

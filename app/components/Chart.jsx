@@ -6,36 +6,40 @@ function Chart({ data }) {
   const [initialized, setInitialized] = useState(false);
   const coin = data.symbol.toUpperCase();
   function setData() {
-    if (!initialized) {
-      const script = document.createElement("script");
-      script.src =
-        "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
-      script.type = "text/javascript";
-      script.async = true;
-      script.innerHTML = `
-          {
-            "autosize": true,
-            "symbol": "${coin}USDT",
-            "interval": "D",
-            "timezone": "Etc/UTC",
-            "theme": "light",
-            "style": "3",
-            "locale": "en",
-            "enable_publishing": false,
-            "backgroundColor": "rgba(238, 238, 238, 1)",
-            "gridColor": "rgba(207, 226, 243, 0)",
-            "hide_legend": true,
-            "withdateranges": true,
-            "hide_top_toolbar": true,
-            "save_image": false,
-            "calendar": false,
-            "hide_volume": true,
-            "support_host": "https://www.tradingview.com"
-          }`;
+    try {
+      if (!initialized) {
+        const script = document.createElement("script");
+        script.src =
+          "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+        script.type = "text/javascript";
+        script.async = true;
+        script.innerHTML = `
+            {
+              "autosize": true,
+              "symbol": "${coin}USDT",
+              "interval": "D",
+              "timezone": "Etc/UTC",
+              "theme": "light",
+              "style": "3",
+              "locale": "en",
+              "enable_publishing": false,
+              "backgroundColor": "rgba(238, 238, 238, 1)",
+              "gridColor": "rgba(207, 226, 243, 0)",
+              "hide_legend": true,
+              "withdateranges": true,
+              "hide_top_toolbar": true,
+              "save_image": false,
+              "calendar": false,
+              "hide_volume": true,
+              "support_host": "https://www.tradingview.com"
+            }`;
 
-      if (container.current.childElementCount <= 1) {
-        container.current.appendChild(script);
+        if (container.current.childElementCount <= 1) {
+          container.current.appendChild(script);
+        }
       }
+    } catch (error) {
+      console.log(error);
     }
   }
   <iframe

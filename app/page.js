@@ -55,7 +55,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <CoinList />
+      <CoinList btc={btc} eth={eth} tether={tether} bnb={bnb} />
       <Footer />
     </>
   );

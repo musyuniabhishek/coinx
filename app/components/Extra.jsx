@@ -21,7 +21,7 @@ export default function Extra() {
   return (
     <div className="w-11/12 mx-auto my-3 bg-white rounded-lg p-6 ">
       <h3 className="text-2xl font-semibold my-4">You May Also Like</h3>
-      <div className="flex gap-8  overflow-x-scroll no-scrollbar  w-full">
+      <div className="flex gap-8  overflow-x-scroll   w-full">
         {alsoLike &&
           alsoLike.map((coin, index) => {
             return (
@@ -60,7 +60,7 @@ export default function Extra() {
       </div>
 
       <h3 className="text-2xl font-semibold my-4">Trending Coins</h3>
-      <div className="flex gap-8  overflow-x-scroll no-scrollbar  w-full">
+      <div className="flex gap-8  overflow-x-scroll overflow-y-hidden   w-full">
         {trending &&
           trending.map((coin, index) => {
             return (
