@@ -22,7 +22,12 @@ export default function CoinList({ btc, eth, tether, bnb }) {
   return (
     <>
       <div className="text-white w-[85%] mx-auto mt-28">
-        <h1 className="text-5xl font-bold mb-6">Market Update</h1>
+        <h1 className="text-5xl font-bold mb-6">
+          Market Update{" "}
+          <span className="text-xl">
+            (Click The Below list to check the live Trading Charts)
+          </span>
+        </h1>
         <div className="mt-9">
           <div className="my-5 flex overflow-x-scroll justify-between flex-nowrap no-scrollbar p-4 bg-gradiant rounded-lg">
             <div className="min-w-64 text-xl font-semibold">Coin</div>
